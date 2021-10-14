@@ -1,8 +1,9 @@
 ---
-title: "Raspberrypi_cluster"
+title: "RaspberryPI cluster"
 date: 2021-10-14T10:39:53+01:00
 draft: false
 series: kubernetes
+project: raspberrypi
 ---
 Well I made Kubernetes cluster using Raspberry PIs, I largely followed the guide [RasperryPI 4 Cluster](https://rpi4cluster.com)
 

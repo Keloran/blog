@@ -2,6 +2,7 @@
 title: "Static Generator"
 date: 2021-01-01T14:55:05+01:00
 draft: false
+project: static
 ---
 Started a index generator, all it does is reads the projects and blog directory,
 * if there are pages in the project folder

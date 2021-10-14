@@ -1,0 +1,32 @@
+baseURL: 'https://keloran.dev'
+languageCode: 'en-us'
+title: 'Keloran blog and random stuff'
+theme: 'github-style'
+copyright: 'Keloran'
+enableEmoji: true
+params:
+  github: Keloran
+  url: https://keloran.dev
+  rss: true
+  avatar: https://avatars.githubusercontent.com/u/200350?v=4
+  linkedin: https://www.linkedin.com/in/keloran/
+  twitter: https://twitter.com/keloran
+  description: |
+    - Keyboard builder
+    - Golang developer
+    - macOS user
+  github_accounts:
+    - name: keloran
+      image: https://avatars.githubusercontent.com/u/200350?v=4
+    - name: bugfixes
+      image: https://avatars.githubusercontent.com/u/7994911?s=64&v=4
+    - name: chewedfeed
+      image: https://avatars.githubusercontent.com/u/35765419?s=64&v=4
+    - name: tracklines
+      image: https://avatars.githubusercontent.com/u/28525656?s=64&v=4
+    - name: nordicarts
+      image: https://avatars.githubusercontent.com/u/8436400?s=64&v=4
+    - name: fruitstall
+      image: https://avatars.githubusercontent.com/u/51120162?s=64&v=4
+    - name: lincboards
+      image: https://avatars.githubusercontent.com/u/80216761?s=64&v=4
