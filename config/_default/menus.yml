@@ -1,6 +1,6 @@
 main:
-  - name: Projects
-    url: /projects
+  - name: Current Projects
+    url: /projects/current
     weight: 40
   - name: Blog
     url: /blog/
