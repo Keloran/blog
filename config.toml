@@ -1,0 +1,4 @@
+baseURL = 'https://keloran.dev'
+languageCode = 'en-us'
+title = 'Keloran blog and random stuff'
+theme = 'eureka'

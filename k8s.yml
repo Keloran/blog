@@ -1,0 +1,84 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: k8s-blog
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: k8s-blog
+  name: blog
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: blog
+  template:
+    metadata:
+      labels:
+        app: blog
+    spec:
+      containers:
+        - name: blog
+          image: keloran/blog:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+  strategy:
+      rollingUpdate:
+        maxUnavailable: 1
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: k8s-blog
+  name: blog
+spec:
+  selector:
+    app: blog
+  ports:
+    - protocol: TCP
+      port: 80
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: k8s-blog
+  name: blog-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: acme-prod
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  labels:
+    k8s-app: blog
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - www.keloran.dev
+        - keloran.dev
+      secretName: blog-tls
+  rules:
+      - host: keloran.dev
+        http:
+          paths:
+            - path: /
+              pathType: Prefix
+              backend:
+                service:
+                  name: blog
+                  port:
+                    number: 80
+      - host: www.keloran.dev
+        http:
+          paths:
+            - path: /
+              pathType: Prefix
+              backend:
+                service:
+                  name: blog
+                  port:
+                    number: 80
