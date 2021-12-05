@@ -12,9 +12,7 @@ params:
   linkedin: https://www.linkedin.com/in/keloran/
   twitter: https://twitter.com/keloran
   description: |
-    - Keyboard builder
-    - Golang developer
-    - macOS user
+    Keyboard builder, Golang developer
   github_accounts:
     - name: keloran
       image: https://avatars.githubusercontent.com/u/200350?v=4
@@ -30,3 +28,7 @@ params:
       image: https://avatars.githubusercontent.com/u/51120162?s=64&v=4
     - name: lincboards
       image: https://avatars.githubusercontent.com/u/80216761?s=64&v=4
+    - name: k8sdeploy
+      image: https://avatars.githubusercontent.com/u/93620800?s=64&v=4
+    - name: retro-board
+      image: https://avatars.githubusercontent.com/u/95586638?s=64&v=4
