@@ -5,6 +5,7 @@ theme: 'github-style'
 copyright: 'Keloran'
 enableEmoji: true
 params:
+  favicon: https://avatars.githubusercontent.com/u/200350?v=4
   github: Keloran
   url: https://keloran.dev
   rss: true

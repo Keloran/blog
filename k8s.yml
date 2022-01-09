@@ -11,7 +11,7 @@ metadata:
   namespace: k8s-blog
   name: blog
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: blog
@@ -20,6 +20,8 @@ spec:
       labels:
         app: blog
     spec:
+      nodeSelector:
+        cputype: arm64
       containers:
         - name: blog
           image: keloran/blog:latest

@@ -1,0 +1,51 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: k8s-blog
+  name: blog-tracklines-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: acme-prod
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  labels:
+    k8s-app: blog
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - www.tracklines.dev
+        - api.tracklines.dev
+        - tracklines.dev
+      secretName: blog-tracklines-tls
+  rules:
+      - host: tracklines.dev
+        http:
+          paths:
+            - path: /
+              pathType: Prefix
+              backend:
+                service:
+                  name: blog
+                  port:
+                    number: 80
+      - host: www.tracklines.dev
+        http:
+          paths:
+            - path: /
+              pathType: Prefix
+              backend:
+                service:
+                  name: blog
+                  port:
+                    number: 80
+      - host: api.tracklines.dev
+        http:
+          paths:
+            - path: /
+              pathType: Prefix
+              backend:
+                service:
+                  name: blog
+                  port:
+                    number: 80
+
