@@ -15,7 +15,7 @@ so you need to update Rancher and Nerd, well thats where the issue exists, Lima 
 First you need to get into the instance
 ```sh
 LIMA_HOME=/Users/<username>/Library/Application\ Support/rancher-desktop/lima \
-	/Library/Applications/Rancher\ Desktop.app/Contents/Resources/resources/darwin/lima/bin/limactl \
+	/Applications/Rancher\ Desktop.app/Contents/Resources/resources/darwin/lima/bin/limactl \
 	shell 0 sudo --preserve-env=CONTAINERD_ADDRESS sh
 ```
 
