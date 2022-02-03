@@ -1,43 +1,32 @@
-IMAGE_TIME=$(shell date "+%Y-%m-%d_%H-%M")
+GIT_COMMIT=`git rev-parse HEAD`
 
 .PHONY: server
 server:
 	hugo server -D
 
-.PHONY: podman-start
-podman-start:
-	podman machine stop
-	sleep 10
-	podman machine start
-
-.PHONY: podman-stop
-podman-stop:
-	podman machine stop
-
 .PHONY: build-image
 build-image: 
 	hugo
-	podman build -t ghcr.io/keloran/blog:${IMAGE_TIME} --arch=arm64 -f ./Dockerfile
-	podman tag ghcr.io/keloran/blog:${IMAGE_TIME} ghcr.io/keloran/blog:latest
-
+	nerdctl build --platform arm64,amd64 --tag containers.home.develbox.info/keloran/blog:${GIT_COMMIT} .
+	nerdctl tag containers.home.develbox.info/keloran/blog:${GIT_COMMIT} containers.home.develbox.info/keloran/blog:latest
 
 .PHONY: publish-image
-publish-image: podman-start
-	podman push ghcr.io/keloran/blog:${IMAGE_TIME}
-	podman push ghcr.io/keloran/blog:latest
+publish-image: 
+	nerdctl push containers.home.develbox.info/keloran/blog:${GIT_COMMIT}
+	nerdctl push containers.home.develbox.info/keloran/blog:latest
 
 .PHONY: deploy-image
 deploy-image:
-	kubectl set image deployment/blog blog=ghcr.io/keloran/blog:${IMAGE_TIME} --namespace k8s-blog
+	kubectl set image deployment/blog blog=containers.home.develbox.info/keloran/blog:latest --namespace k8s-blog
 
 .PHONY: build
-build: podman-start build-image podman-stop
+build: build-image
 
 .PHONY: deploy
-deploy: podman-start publish-image podman-stop deploy-image 
+deploy: publish-image deploy-image 
 
 .PHONY: build-deploy
-build-deploy: podman-start build-image publish-image podman-stop deploy-image
+build-deploy: build-image publish-image deploy-image
 
 .PHONY: new_project
 new_project:
