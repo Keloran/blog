@@ -4,11 +4,10 @@ GIT_COMMIT=`git rev-parse HEAD`
 server:
 	hugo server -D
 
-.PHONY: build-image
-build-image: 
+.PHONY: build-push-image
+build-push-image: 
 	hugo
-	nerdctl build --platform arm64 --output type=image,name=containers.home.develbox.info/keloran/blog:${GIT_COMMIT} .
-	nerdctl tag containers.home.develbox.info/keloran/blog:${GIT_COMMIT} containers.home.develbox.info/keloran/blog:latest
+	nerdctl build --platform arm64,amd64 --output type=image,name=containers.home.develbox.info/keloran/blog:latest,push=true .
 
 .PHONY: publish-image
 publish-image: 
@@ -26,7 +25,7 @@ build: build-image
 deploy: publish-image deploy-image 
 
 .PHONY: build-deploy
-build-deploy: build-image publish-image deploy-image
+build-deploy: build-push-image deploy-image
 
 .PHONY: new_project
 new_project:
