@@ -7,7 +7,7 @@ server:
 .PHONY: build-image
 build-image: 
 	hugo
-	nerdctl build --platform arm64,amd64 --tag containers.home.develbox.info/keloran/blog:${GIT_COMMIT} .
+	nerdctl build --platform arm64 --tag containers.home.develbox.info/keloran/blog:${GIT_COMMIT} .
 	nerdctl tag containers.home.develbox.info/keloran/blog:${GIT_COMMIT} containers.home.develbox.info/keloran/blog:latest
 
 .PHONY: publish-image
