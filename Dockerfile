@@ -1,7 +1,7 @@
 FROM caddy
 
 
-COPY ./public /usr/share/caddy
+COPY ./public /srv
 COPY ./Caddyfile /etc/caddy/Caddyfile
 
 
