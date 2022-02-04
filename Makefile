@@ -1,4 +1,4 @@
-GIT_COMMIT=`git rev-parse HEAD`
+GIT_COMMIT=`git rev-parse --short HEAD`
 
 .PHONY: server
 server:
@@ -10,29 +10,19 @@ compile:
 
 .PHONY: build-image
 build-image: compile
-	nerdctl build --platform linux/arm64,linux/amd64 --tag containers.home.develbox.info/keloran/blog:${GIT_COMMIT} .
+	nerdctl build --platform=linux/arm64,linux/amd64 --tag containers.home.develbox.info/keloran/blog:${GIT_COMMIT} .
 	nerdctl tag containers.home.develbox.info/keloran/blog:${GIT_COMMIT} containers.home.develbox.info/keloran/blog:latest
-
-.PHONY: build-push-image
-build-push-image: compile
-	nerdctl build --platform arm64,amd64 --output type=image,name=containers.home.develbox.info/keloran/blog:latest,push=true .
+	nerdctl build --platform=linux/arm64,linux/amd64 --output type=image,name=containers.home.develbox.info/keloran/blog:${GIT_COMMIT}-push,push=true .
 
 .PHONY: publish-latest-images
 publish-latest-images:
 	nerdctl push containers.home.develbox.info/keloran/blog:${GIT_COMMIT}
 	nerdctl push containers.home.develbox.info/keloran/blog:latest
 
-.PHONY: publish-latest-image
-publish-latest-image: 
-	nerdctl push containers.home.develbox.info/keloran/blog:latest
-
 .PHONY: deploy-image
 deploy-image:
-	kubectl set image deployment/blog blog=containers.home.develbox.info/keloran/blog:${GIT_COMMIT} --namespace k8s-blog
-
-.PHONY: deploy-latest-image
-deploy-latest-image:
-	kubectl set image deployment/blog blog=containers.home.develbox.info/keloran/blog:latest --namespace k8s-blog
+	#kubectl set image deployment/blog blog=containers.home.develbox.info/keloran/blog:${GIT_COMMIT} --namespace k8s-blog
+	kubectl set image deployment/blog blog=containers.home.develbox.info/keloran/blog:${GIT_COMMIT}-push --namespace k8s-blog
 
 .PHONY: build
 build: build-image
@@ -42,9 +32,6 @@ deploy: publish-image deploy-image
 
 .PHONY: build-deploy
 build-deploy: build-image publish-latest-images deploy-image
-
-.PHONY: build-deploy-latest
-build-deploy-latest: build-push-image deploy-latest-image
 
 .PHONY: new_project
 new_project:
