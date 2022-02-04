@@ -1,0 +1,38 @@
+# keloran.dev {
+# 	root * /var/share/caddy
+# }
+# www.bugfixes.dev {
+# 	root * /var/share/caddy
+# }
+# bugfixes.dev {
+# 	root * /var/share/caddy
+# }
+# www.chewedfeed.com {
+# 	root * /var/share/caddy
+# }
+# chewedfeed.com {
+# 	root * /var/share/caddy
+# }
+# www.k8sdeploy.dev {
+# 	root * /var/share/caddy
+# }
+# api.k8sdeploy.dev {
+# 	root * /var/share/caddy
+# }
+# k8sdeploy.dev {
+# 	root * /var/share/caddy
+# }
+# www.tracklines.dev {
+# 	root * /var/share/caddy
+# }
+# api.tracklines.dev {
+# 	root * /var/share/caddy
+# }
+# tracklines.dev {
+# 	root * /var/share/caddy
+# }
+
+:80 {
+	root * /srv
+	file_server
+}
