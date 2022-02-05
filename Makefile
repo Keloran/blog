@@ -12,7 +12,6 @@ compile:
 build-image: compile
 	nerdctl build --platform=linux/arm64,linux/amd64 --tag containers.home.develbox.info/keloran/blog:${GIT_COMMIT} .
 	nerdctl tag containers.home.develbox.info/keloran/blog:${GIT_COMMIT} containers.home.develbox.info/keloran/blog:latest
-	nerdctl build --platform=linux/arm64,linux/amd64 --output type=image,name=containers.home.develbox.info/keloran/blog:${GIT_COMMIT}-push,push=true .
 
 .PHONY: publish-latest-images
 publish-latest-images:
@@ -22,7 +21,6 @@ publish-latest-images:
 .PHONY: deploy-image
 deploy-image:
 	kubectl set image deployment/blog blog=containers.home.develbox.info/keloran/blog:${GIT_COMMIT} --namespace k8s-blog
-	#kubectl set image deployment/blog blog=containers.home.develbox.info/keloran/blog:${GIT_COMMIT}-push --namespace k8s-blog
 
 .PHONY: build
 build: build-image
