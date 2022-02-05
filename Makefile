@@ -16,13 +16,13 @@ build-image: compile
 
 .PHONY: publish-latest-images
 publish-latest-images:
-	nerdctl push containers.home.develbox.info/keloran/blog:${GIT_COMMIT}
-	nerdctl push containers.home.develbox.info/keloran/blog:latest
+	nerdctl push containers.home.develbox.info/keloran/blog:${GIT_COMMIT} --all-platforms
+	nerdctl push containers.home.develbox.info/keloran/blog:latest --all-platforms
 
 .PHONY: deploy-image
 deploy-image:
-	#kubectl set image deployment/blog blog=containers.home.develbox.info/keloran/blog:${GIT_COMMIT} --namespace k8s-blog
-	kubectl set image deployment/blog blog=containers.home.develbox.info/keloran/blog:${GIT_COMMIT}-push --namespace k8s-blog
+	kubectl set image deployment/blog blog=containers.home.develbox.info/keloran/blog:${GIT_COMMIT} --namespace k8s-blog
+	#kubectl set image deployment/blog blog=containers.home.develbox.info/keloran/blog:${GIT_COMMIT}-push --namespace k8s-blog
 
 .PHONY: build
 build: build-image
