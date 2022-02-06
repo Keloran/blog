@@ -27,7 +27,7 @@ deploy-image:
 build: build-image
 
 .PHONY: deploy
-deploy: publish-image deploy-image 
+deploy: publish-latest-images deploy-image 
 
 .PHONY: build-deploy
 build-deploy: build-image publish-latest-images deploy-image
