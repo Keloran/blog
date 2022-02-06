@@ -36,3 +36,6 @@ rm nerdctl-0.16.1-linux-amd64.tar.gz
 ```
 
 Now if you go onto a seperate terminal and do ``` nerdctl -v ``` you should now have the latest version of NerdCTL installed
+
+## Something to remember
+If you are using NerdCTL to build multi-platform images, then remember to add ``` --all-platforms ``` to your push command

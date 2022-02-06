@@ -1,4 +1,5 @@
 GIT_COMMIT=`git rev-parse --short HEAD`
+SERVICE_NAME=blog
 
 .PHONY: server
 server:
@@ -20,7 +21,7 @@ publish-latest-images:
 
 .PHONY: deploy-image
 deploy-image:
-	kubectl set image deployment/blog blog=containers.home.develbox.info/keloran/blog:${GIT_COMMIT} --namespace k8s-blog
+	kubectl set image deployment/${SERVICE_NAME} ${SERVICE_NAME}=containers.home.develbox.info/keloran/blog:${GIT_COMMIT} --namespace k8s-blog
 
 .PHONY: build
 build: build-image
