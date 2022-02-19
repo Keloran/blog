@@ -2,7 +2,7 @@
 title: "Retro Board"
 date: 2021-12-06T15:31:36Z
 draft: false
-series: none
+series: retro-board
 type: project_current
 ---
 
