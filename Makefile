@@ -10,7 +10,7 @@ compile:
 	hugo
 
 .PHONY: build-image
-build-image: compile
+build-image: #compile
 	nerdctl build --platform=linux/arm64,linux/amd64 --tag containers.home.develbox.info/keloran/blog:${GIT_COMMIT} .
 	nerdctl tag containers.home.develbox.info/keloran/blog:${GIT_COMMIT} containers.home.develbox.info/keloran/blog:latest
 
