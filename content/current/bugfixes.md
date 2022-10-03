@@ -4,6 +4,11 @@ date: 2021-10-13T15:05:44+01:00
 draft: false
 type: project_current
 project: bugfixes
+series: bugfixes
+tags: [
+    bugfixes,
+    projects
+]
 ---
 This is a bug tracking system, any time an error happens on your site it tells bugfixes in the agent for your language,
 

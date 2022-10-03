@@ -3,6 +3,10 @@ title: "Going back to BugFix.es"
 date: 2019-12-05T14:55:05+01:00
 draft: false
 series: bugfixes
+tags: [
+	bugfixes,
+	projects
+]
 ---
 I have decided to go back to BugFix.es and re-start development
 

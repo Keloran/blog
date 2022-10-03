@@ -4,6 +4,10 @@ date: 2022-02-19T13:50:20Z
 draft: false
 series: retro-board
 type: post
+tags: [
+  retro-board,
+  projects
+]
 ---
 
 # Retro Board Update

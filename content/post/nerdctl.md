@@ -2,8 +2,13 @@
 title: "Update NerdCTL on RancherDesktop macOS"
 date: 2022-02-03T10:46:56Z
 draft: false
-series: none
+series: kubernetes
 type: post
+tags: [
+	nerdctl,
+	kubernetes,
+	macOS
+]
 ---
 
 # Issue

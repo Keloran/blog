@@ -11,17 +11,17 @@ compile:
 
 .PHONY: build-image
 build-image: #compile
-	nerdctl build --platform=linux/arm64,linux/amd64 --tag containers.home.develbox.info/keloran/blog:${GIT_COMMIT} .
-	nerdctl tag containers.home.develbox.info/keloran/blog:${GIT_COMMIT} containers.home.develbox.info/keloran/blog:latest
+	nerdctl build --platform=linux/arm64,linux/amd64 --tag containers.chewedfeed.com/keloran/blog:${GIT_COMMIT} .
+	nerdctl tag containers.chewedfeed.com/keloran/blog:${GIT_COMMIT} containers.chewedfeed.com/keloran/blog:latest
 
 .PHONY: publish-latest-images
 publish-latest-images:
-	nerdctl push containers.home.develbox.info/keloran/blog:${GIT_COMMIT} --all-platforms
-	nerdctl push containers.home.develbox.info/keloran/blog:latest --all-platforms
+	nerdctl push containers.chewedfeed.com/keloran/blog:${GIT_COMMIT} --all-platforms
+	nerdctl push containers.chewedfeed.com/keloran/blog:latest --all-platforms
 
 .PHONY: deploy-image
 deploy-image:
-	kubectl set image deployment/${SERVICE_NAME} ${SERVICE_NAME}=containers.home.develbox.info/keloran/blog:${GIT_COMMIT} --namespace k8s-blog
+	kubectl set image deployment/${SERVICE_NAME} ${SERVICE_NAME}=containers.chewedfeed.com/keloran/blog:${GIT_COMMIT} --namespace k8s-blog
 
 .PHONY: build
 build: build-image

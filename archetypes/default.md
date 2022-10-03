@@ -4,5 +4,6 @@ date: {{ .Date }}
 draft: true
 series: none
 type: post
+tags: []
 ---
 

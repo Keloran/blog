@@ -4,6 +4,10 @@ date: 2021-12-06T15:31:36Z
 draft: false
 series: retro-board
 type: project_current
+tags: [
+	retro-board,
+	projects
+]
 ---
 
 # Retro Board

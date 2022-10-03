@@ -3,6 +3,10 @@ title: "BugFix.es Progress"
 date: 2020-01-07T14:55:05+01:00
 draft: false
 series: bugfixes
+tags: [
+	bugfixes,
+	projects
+]
 ---
 Progress has been slow to start with, but that should now speed up
 

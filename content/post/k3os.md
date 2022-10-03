@@ -2,8 +2,11 @@
 title: "K3OS"
 date: 2022-02-06T17:52:44Z
 draft: false
-series: none
+series: kubernetes
 type: post
+tags: [
+	kubernetes
+]
 ---
 
 # K3OS

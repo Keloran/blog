@@ -2,8 +2,12 @@
 title: "Integrating Vault with 1Password in Kubernetes"
 date: 2022-01-10T17:14:04Z
 draft: false
-series: none
+series: kubernetes
 type: post
+tags: [
+  1password,
+  kubernetes
+]
 ---
 
 # Integrating Vault with 1Password in Kubernetes

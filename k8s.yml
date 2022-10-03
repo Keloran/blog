@@ -1,10 +1,4 @@
 ---
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: k8s-blog
-
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -21,13 +15,15 @@ spec:
         app: blog
     spec:
       nodeSelector:
-        cputype: arm64
+        kubernetes.io/arch: arm64
       containers:
         - name: blog
-          image: keloran/blog:latest
+          image: containers.home.develbox.info/keloran/blog:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80
+      imagePullSecrets:
+        - name: regcred
   strategy:
       rollingUpdate:
         maxUnavailable: 1
