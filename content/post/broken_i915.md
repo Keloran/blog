@@ -33,8 +33,17 @@ So fine i'll see what version of kernel is on the live version, 5.9.6, okay what
 
 time to look at the changelog, and 5.9.12 had a change in the i915 module, right lets see what happens if I install and then force downgrade in chroot to 5.9.11
 
+```
+sudo pacman -U https://archive.archlinux.org/packages/l/linux/linux-5.19.11.arch1-1-x86_64.pkg.tar.zst
+sudo pacman -U https://archive.archlinux.org/packages/l/linux-headers/linux-headers-5.19.11.arch1-1-x86_64.pkg.tar.zst
+```
+
 *HALLELUJAHj*
 
 it works
 
 Guess I won't be upgrading to kernel 6 that released today unless they have reverted that patch
+
+#### Add linux/linux-headers to ignore
+Update the line in ```/etc/pacman.conf```
+``` IgnorePkg   = linux-headers linux ```
