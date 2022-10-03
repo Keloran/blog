@@ -46,4 +46,5 @@ Guess I won't be upgrading to kernel 6 that released today unless they have reve
 
 #### Add linux/linux-headers to ignore
 Update the line in ```/etc/pacman.conf```
+
 ``` IgnorePkg   = linux-headers linux ```
