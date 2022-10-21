@@ -55,3 +55,7 @@ The team board starts with the following options
 ### Future Usage
 This performs the same as initial the only difference is that before the topic creation can begin, the list of actions from last retro are displayed to see if they have been performed, and if not they are auto rolled into the actions for this retro
 
+---
+[Github Site](https://github.com/retro-board)
+
+[Company Site](https://retro-board.it)

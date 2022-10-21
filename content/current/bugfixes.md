@@ -39,8 +39,8 @@ Planned notification systems
 
 ---
 [GitHub Link](https://github.com/bugfixes)
---
+
+
 [Company Site](https://bugfix.es)
---
-[Home](/)
+
 
