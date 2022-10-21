@@ -10,8 +10,8 @@ params:
   url: https://keloran.dev
   rss: true
   avatar: https://avatars.githubusercontent.com/u/200350?v=4
-  linkedin: https://www.linkedin.com/in/keloran/
-  twitter: https://twitter.com/keloran
+  linkedin: keloran
+  twitter: keloran
   description: |
     Keyboard builder, Golang developer
   github_accounts:
