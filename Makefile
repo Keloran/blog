@@ -11,7 +11,7 @@ compile:
 
 .PHONY: build-image
 build-image: #compile
-	nerdctl build --platform=linux/arm64,linux/amd64 --tag containers.chewedfeed.com/keloran/blog:${GIT_COMMIT} .
+	nerdctl build --platform=linux/arm64,linux/amd64 --tag containers.chewedfeed.com/keloran/blog:${GIT_COMMIT} -f ./Containerfile .
 	nerdctl tag containers.chewedfeed.com/keloran/blog:${GIT_COMMIT} containers.chewedfeed.com/keloran/blog:latest
 
 .PHONY: publish-latest-images
@@ -27,7 +27,7 @@ deploy-image:
 build: build-image
 
 .PHONY: deploy
-deploy: publish-latest-images deploy-image 
+deploy: publish-latest-images deploy-image
 
 .PHONY: build-deploy
 build-deploy: build-image publish-latest-images deploy-image
