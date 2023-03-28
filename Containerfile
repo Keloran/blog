@@ -1,5 +1,5 @@
 #Builder
-FROM containers.chewedfeed.com/docker_hub_cache/library/golang:alpine3.15 AS builder
+FROM containers.chewed-k8s.net/docker_hub_cache/library/golang:alpine3.15 AS builder
 WORKDIR /builder
 
 RUN apk update && apk add --no-cache git

@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: k8s-blog
+  namespace: keloran
   name: blog
 spec:
   replicas: 2
@@ -18,12 +18,12 @@ spec:
         kubernetes.io/arch: arm64
       containers:
         - name: blog
-          image: containers.home.develbox.info/keloran/blog:latest
+          image: containers.chewed-k8s.net/keloran/blog:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80
       imagePullSecrets:
-        - name: regcred
+        - name: docker-registry-secret
   strategy:
       rollingUpdate:
         maxUnavailable: 1
@@ -32,7 +32,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: k8s-blog
+  namespace: keloran
   name: blog
 spec:
   selector:
@@ -45,10 +45,10 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  namespace: k8s-blog
+  namespace: keloran
   name: blog-ingress
   annotations:
-    cert-manager.io/cluster-issuer: acme-prod
+    cert-manager.io/cluster-issuer: live-issuer
     nginx.ingress.kubernetes.io/rewrite-target: /
   labels:
     k8s-app: blog
