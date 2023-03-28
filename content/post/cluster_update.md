@@ -32,9 +32,11 @@ So I purchased a few things to tackle this issue
 With these purchases I decided to reconfigure the cluster, so rather than 4 worker PIs, 1 control PI, 2 x86 workers I now have the following
 
 - 5 Raspberry PI4s as workers
-- DL360g8 as control, and master
-- R715 as worker and master
-- DL160g6 as database runner
+- DL360g8, as control, and master (4Tb Longhorn)
+- R715, as worker and master (4Tb Longhorn)
+- DL160g6, as database runner
+- ML110g7, as a worker (3Tb Longhorn)
+- N40L, as a worker (2Tb Longhorn)
 
 At the same time I switched to a FTTP provider, and now I have 1gb synchronous instead of 1gb/30mb
 
