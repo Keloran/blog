@@ -21,7 +21,7 @@ publish-latest-images:
 
 .PHONY: deploy-image
 deploy-image:
-	kubectl set image deployment/${SERVICE_NAME} ${SERVICE_NAME}=containers.chewed-k8s.net/keloran/blog:${GIT_COMMIT} --namespace k8s-blog
+	kubectl set image deployment/${SERVICE_NAME} ${SERVICE_NAME}=containers.chewed-k8s.net/keloran/blog:${GIT_COMMIT} --namespace keloran
 
 .PHONY: build
 build: build-image
