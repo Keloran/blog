@@ -1,7 +1,7 @@
 ---
 title: "Cluster Update"
 date: 2023-03-28T11:21:05+01:00
-draft: true
+draft: false
 series: kubernetes
 type: post
 tags: [
