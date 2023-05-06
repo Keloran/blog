@@ -27,8 +27,8 @@ params:
       image: https://avatars.githubusercontent.com/u/8436400?s=64&v=4
     - name: fruitstall
       image: https://avatars.githubusercontent.com/u/51120162?s=64&v=4
-    - name: lincboards
-      image: https://avatars.githubusercontent.com/u/80216761?s=64&v=4
+    - name: todo-lists-app
+      image: https://avatars.githubusercontent.com/u/107482119?s=64&v=4
     - name: k8sdeploy
       image: https://avatars.githubusercontent.com/u/93620800?s=64&v=4
     - name: retro-board
