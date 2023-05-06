@@ -12,6 +12,10 @@ params:
   avatar: https://avatars.githubusercontent.com/u/200350?v=4
   linkedin: keloran
   twitter: keloran
+  mastodon:
+    username: keloran
+    server: fosstodon.org
+  stackoverflow: 608168
   description: |
     Keyboard builder, Golang developer
   github_accounts:
