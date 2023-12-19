@@ -7,7 +7,8 @@ project: bugfixes
 series: bugfixes
 tags: [
     bugfixes,
-    projects
+    projects,
+    chewedfeed
 ]
 ---
 This is a bug tracking system, any time an error happens on your site it tells bugfixes in the agent for your language,

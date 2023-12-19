@@ -8,7 +8,8 @@ series: k8sdeploy
 tags: [
     k8sdeploy,
     projects,
-    kubernetes
+    kubernetes,
+    chewedfeed
 ]
 ---
 This project is so that I can deploy projects into my cluster using github pipelines

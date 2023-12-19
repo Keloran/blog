@@ -25,3 +25,8 @@ Here is my timeline, I ordered the steamdeck very quickly after announcement 256
 - RMA initiated - 5th July
 
 So I've had 2 steamdecks and not quite been 1 year since my original arrived, and ill be on my 3rd soon
+
+---
+
+### Update - December 2023
+Since my 3rd steamdeck arrived I have been using it wihout issue, it also has Guilikit joysticks, and now a dbrand teardown skin

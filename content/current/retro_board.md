@@ -6,7 +6,8 @@ series: retro-board
 type: project_current
 tags: [
 	retro-board,
-	projects
+	projects,
+  chewedfeed
 ]
 ---
 
